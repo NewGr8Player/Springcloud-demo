@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8970
 spring:
   application:
     name: config-server
@@ -8,7 +8,15 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/NewGr8Player/Springcloud-demo/
-          searchPaths: service-helloworld/src/main/resources/
+          uri: https://github.com/NewGr8Player/Springcloud-demo
+          searchPaths: config
           username:
           password:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: ${spring.cloud.client.ip-address}
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}

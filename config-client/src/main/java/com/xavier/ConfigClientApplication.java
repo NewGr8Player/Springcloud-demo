@@ -14,7 +14,7 @@ public class ConfigClientApplication {
 		SpringApplication.run(ConfigClientApplication.class, args);
 	}
 
-	@Value("${spring.application.name}")
+	@Value("${flag}")
 	String applicationName;
 
 	@RequestMapping(value = "/hi")
