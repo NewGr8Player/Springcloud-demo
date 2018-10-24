@@ -6,3 +6,16 @@ spring:
       discovery:
         enabled: true
         serviceId: CONFIG-SERVER
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+      stream:
+        kafka:
+          binder:
+            brokers: 127.0.0.1:9092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
